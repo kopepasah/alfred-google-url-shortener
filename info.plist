@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.kopepasah.google-url-shortener</string>
+	<key>connections</key>
+	<dict>
+		<key>320A4CFF-6BE3-4410-A09F-AC6BC2ABA1C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F51E1CB-3C26-4FB1-BAC9-B4BB6989AC3B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C54169F4-B66A-451F-B3C2-F7203BE8E6F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Justin Kopepasah</string>
+	<key>description</key>
+	<string>Shorten a long URL using goo.gl.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Google URL Shortener</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5F51E1CB-3C26-4FB1-BAC9-B4BB6989AC3B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>goo.gl</string>
+				<key>runningsubtext</key>
+				<string>Fetching URL...</string>
+				<key>script</key>
+				<string>define( 'API_KEY', 'AIzaSyD7ejtWQ4feSzK_6GNCpDzT5xCUUdGM1Uo' );
+
+// Pull in the Workflows class.
+require_once( 'workflows.php' );
+
+// Pull in the Google API Class.
+require_once( 'api.php' );
+
+// Require our URL builder.
+require_once( 'url.php' );
+
+// Get URL!
+get_url( '{query}' );</string>
+				<key>subtext</key>
+				<string>Paste/Type Long URL</string>
+				<key>title</key>
+				<string>Google URL Shortener</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>320A4CFF-6BE3-4410-A09F-AC6BC2ABA1C3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Goo.gl URL Copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C54169F4-B66A-451F-B3C2-F7203BE8E6F7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Google URL Shortener
+
+An Alfred Extension that uses Google's URL Shortener API to shorten long URLs.
+
+Workflows class is written by David Ferguson (many thanks).
+
+NOTE: All goo.gl URLs and click analytics are public and can be accessed by anyone.
+
+Installation
+
+Download the latest release and install the workflow via Alfred.
+
+Usage
+
+Type goo.gl and paste/type your long URL, press enter/return to copy to clipboard.</string>
+	<key>uidata</key>
+	<dict>
+		<key>320A4CFF-6BE3-4410-A09F-AC6BC2ABA1C3</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>5F51E1CB-3C26-4FB1-BAC9-B4BB6989AC3B</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>C54169F4-B66A-451F-B3C2-F7203BE8E6F7</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>kopepasah.com</string>
+</dict>
+</plist>
